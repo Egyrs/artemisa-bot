@@ -1,0 +1,17 @@
+<context>
+    <input pattern="(hi|hello) *">
+        <!-- Saluda al usuario si conoce su nombre -->
+        <output value="Hola $UserName!" if="full($UserName)"/>
+
+        <!-- O activa un contexto interno para preguntar al usuario su nombre -->
+        <context if="empty($UserName)" modal="true"> <!-- We use a modal context, so our bot will recognize any text as the user’s name -->
+            <output value="¡Hola! ¿Cómo quieres que te llame? Nuestra conversación es privada y anónima pero dime cómo quieres que me dirija a ti"/>
+
+            <input pattern="$Text">
+                <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
+                <var name="UserName" value="$Text" scope="user"/>
+                <output value="Encantada de charlar contigo, $UserName!"/> <!-- Using the placeholder in output -->
+            </input>
+        </context>
+    </input>
+</context>
