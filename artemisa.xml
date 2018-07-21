@@ -10,7 +10,7 @@
             <input pattern="$Text">
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="UserName" value="$Text" scope="user"/>
-                <output value="Encantada de charlar contigo, $UserName!"/> <!-- Using the placeholder in output -->
+                <output value="¡Encantada de charlar contigo, $UserName! ¿En qué puedo ayudarte?"/> <!-- Using the placeholder in output -->
             </input>
         </context>
     </input>
